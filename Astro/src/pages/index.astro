@@ -1,4 +1,6 @@
 ---
+import Navbar from "../components/Navbar.astro";
+
 // Solo en el Servidor
 const name = "Alejandro Rodríguez Gallardo";
 const title = "Mi Pagina con Astro";
@@ -11,7 +13,10 @@ const title = "Mi Pagina con Astro";
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
 	</head>
+
 	<body>
+		<Navbar />
+
 		<h1>{name}</h1>
 
 		<p>Momento actual falso: {new Date().toLocaleTimeString()}</p>
@@ -35,6 +40,9 @@ const title = "Mi Pagina con Astro";
 				"current-time",
 			) as HTMLParagraphElement;
 			currentTime.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
+
+			// Nav
+			const nav = document.querySelector("nav") as HTMLElement;
 		</script>
 	</body>
 </html>
